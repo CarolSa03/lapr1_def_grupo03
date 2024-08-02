@@ -10,9 +10,9 @@ public class Plotter {
         cmd[1] = "set terminal pngcairo size 1000,500\n";
         cmd[2] = "set output 'grafico.png'\n";
         cmd[3] = "set datafile separator ';'\n";
-        cmd[4] = "set title 'Propagação de uma notícia falsa'\n";
-        cmd[5] = "set xlabel 'Número de dias'\n";
-        cmd[6] = "set ylabel 'População'\n";
+        cmd[4] = "set title 'Propagation of Fake News'\n";
+        cmd[5] = "set xlabel 'Number of Days'\n";
+        cmd[6] = "set ylabel 'Population'\n";
         cmd[7] = "plot '.\\ficheiroResultado.csv' every ::1 using 1:2 smooth bezier lw 4 title 'S','.\\ficheiroResultado.csv' every ::1 using 1:3 smooth bezier lw 4 title 'I' ,'.\\ficheiroResultado.csv' every ::1 using 1:4 smooth bezier lw 4 title 'R'\n";
         cmd[8] = "exit";
         graphic(cmd);
@@ -22,11 +22,11 @@ public class Plotter {
         String nonInteractiveFileName = FileHandler.generateNICSVFiles(names, i);
         cmd[0] = "reset\n";
         cmd[1] = "set terminal pngcairo size 1000,500\n";
-        cmd[2] = "set output 'grafico" + names[i] + ".png'\n";
+        cmd[2] = "set output 'Graph" + names[i] + ".png'\n";
         cmd[3] = "set datafile separator ';'\n";
-        cmd[4] = "set title 'Propagação de uma notícia falsa'\n";
-        cmd[5] = "set xlabel 'Número de dias'\n";
-        cmd[6] = "set ylabel 'População'\n";
+        cmd[4] = "set title 'Propagation of Fake News'\n";
+        cmd[5] = "set xlabel 'Number of Days'\n";
+        cmd[6] = "set ylabel 'Population'\n";
         cmd[7] = "plot '.\\" + nonInteractiveFileName + "' every ::1 using 1:2 smooth bezier lw 4 title 'S','.\\" + nonInteractiveFileName + "' every ::1 using 1:3 smooth bezier lw 4 title 'I' ,'.\\" + nonInteractiveFileName + "' every ::1 using 1:4 smooth bezier lw 4 title 'R'\n";
         cmd[8] = "exit";
         graphic(cmd);
